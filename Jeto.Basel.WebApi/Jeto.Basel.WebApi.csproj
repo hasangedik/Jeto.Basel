@@ -1,0 +1,90 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="EFCore.NamingConventions" Version="5.0.2" />
+        <PackageReference Include="FluentValidation" Version="10.3.3" />
+        <PackageReference Include="FluentValidation.AspNetCore" Version="10.3.3" />
+        <PackageReference Include="MediatR" Version="9.0.0" />
+        <PackageReference Include="MediatR.Extensions.Autofac.DependencyInjection" Version="7.3.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.10" NoWarn="NU1605" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="5.0.10" NoWarn="NU1605" />
+        <PackageReference Include="Serilog.AspNetCore" Version="4.1.0" />
+        <PackageReference Include="Serilog.Sinks.Console" Version="4.0.0" />
+        <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Jeto.Basel.Common\Jeto.Basel.Common.csproj" />
+      <ProjectReference Include="..\Jeto.Basel.Container\Jeto.Basel.Container.csproj" />
+      <ProjectReference Include="..\Jeto.Basel.Core\Jeto.Basel.Core.csproj" />
+      <ProjectReference Include="..\Jeto.Basel.Data\Jeto.Basel.Data.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\EmailTemplates\Welcome.html" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Activate-Account-E-Mail@2x_01.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Activate-Account-E-Mail@2x_02.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Activate-Account-E-Mail@2x_03.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Activate-Account-E-Mail@2x_04.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Activate-Account-E-Mail@2x_05.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Activate-Account-E-Mail@2x_06.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Activate-Account-E-Mail@2x_07.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Activate-Account-E-Mail@2x_08.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Activate-Account-E-Mail@2x_09.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Activate-Account-E-Mail@2x_10.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Activate-Account-E-Mail@2x_11.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Activate-Account-E-Mail@2x_12.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Activate-Account-E-Mail@2x_13.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Activate-Account-E-Mail@2x_14.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Activate-Account-E-Mail@2x_15.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Activate-Account-E-Mail@2x_16.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Activate-Account-E-Mail@2x_17.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Activate-Account-E-Mail@2x_18.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Activate-Account-E-Mail@2x_19.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Activate-Account-E-Mail@2x_20.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Activate-Account-E-Mail@2x_21.gif" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Forgot-Password-E-Mail@2x_01.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Forgot-Password-E-Mail@2x_02.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Forgot-Password-E-Mail@2x_03.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Forgot-Password-E-Mail@2x_04.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Forgot-Password-E-Mail@2x_05.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Forgot-Password-E-Mail@2x_06.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Forgot-Password-E-Mail@2x_07.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Forgot-Password-E-Mail@2x_08.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Forgot-Password-E-Mail@2x_09.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Forgot-Password-E-Mail@2x_10.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Forgot-Password-E-Mail@2x_11.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Forgot-Password-E-Mail@2x_12.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Forgot-Password-E-Mail@2x_13.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Forgot-Password-E-Mail@2x_14.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Forgot-Password-E-Mail@2x_15.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Forgot-Password-E-Mail@2x_16.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Forgot-Password-E-Mail@2x_17.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Forgot-Password-E-Mail@2x_18.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Forgot-Password-E-Mail@2x_19.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Forgot-Password-E-Mail@2x_20.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\images\Forgot-Password-E-Mail@2x_21.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Logs\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Logs\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Logs\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="Logs\**" />
+    </ItemGroup>
+
+</Project>
