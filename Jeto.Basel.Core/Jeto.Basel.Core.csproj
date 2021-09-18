@@ -17,4 +17,8 @@
       <ProjectReference Include="..\Jeto.Basel.Domain\Jeto.Basel.Domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Features\QueryHandlers" />
+    </ItemGroup>
+
 </Project>

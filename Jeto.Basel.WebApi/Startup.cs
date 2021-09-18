@@ -3,7 +3,7 @@ using FluentValidation;
 using Jeto.Basel.Common.Providers;
 using Jeto.Basel.Common.StartupConfigurations;
 using Jeto.Basel.Container;
-using Jeto.Basel.Core.Handlers.User;
+using Jeto.Basel.Core.Features.CommandHandlers.User;
 using Jeto.Basel.Core.Validators;
 using Jeto.Basel.WebApi.Middlewares;
 using Jeto.Basel.WebApi.PipelineBehaviours;

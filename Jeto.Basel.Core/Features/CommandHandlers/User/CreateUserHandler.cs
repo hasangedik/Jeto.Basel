@@ -5,7 +5,7 @@ using Jeto.Basel.Domain.Commands.User;
 using Jeto.Basel.Domain.Contracts;
 using MediatR;
 
-namespace Jeto.Basel.Core.Handlers.User
+namespace Jeto.Basel.Core.Features.CommandHandlers.User
 {
     public class CreateUserHandler : IRequestHandler<CreateUserCommand, UserContract>
     {
