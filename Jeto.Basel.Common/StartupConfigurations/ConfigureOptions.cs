@@ -19,6 +19,7 @@ namespace Jeto.Basel.Common.StartupConfigurations
         public static IServiceCollection AddOptionConfiguration(this IServiceCollection services, IConfiguration configuration)
         {
             services.Configure<AuthOptions>(configuration.GetSection(AppConstants.AuthOptionName));
+            services.Configure<MailServerOptions>(configuration.GetSection(AppConstants.MailServerOptionName));
             return services;
         }
     }

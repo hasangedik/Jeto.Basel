@@ -1,17 +1,16 @@
-using System.Reflection;
+﻿using System.Reflection;
 using Autofac;
-using Jeto.Basel.Data.Repositories.Concrete;
+using Jeto.Basel.Core.Service.Concrete;
 using Module = Autofac.Module;
 
 namespace Jeto.Basel.Container
 {
-    public class RepositoryModule : Module
+    public class ServiceModule : Module
     {
         protected override void Load(ContainerBuilder builder)
         {
-            var assemblyType = typeof(UserRepository).GetTypeInfo();
-
-            builder.RegisterAssemblyTypes(assemblyType.Assembly)
+            var coreAssemblyType = typeof(EmailService).GetTypeInfo();
+            builder.RegisterAssemblyTypes(coreAssemblyType.Assembly)
                 .AsImplementedInterfaces()
                 .InstancePerLifetimeScope();
 

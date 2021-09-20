@@ -8,5 +8,6 @@ namespace Jeto.Basel.Common.Constants
         public const string JsonContentType = "application/json";
         public const string Jwt = "JWT";
         public const string AuthOptionName = "Auth";
+        public const string MailServerOptionName = "MailServer";
     }
 }

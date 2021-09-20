@@ -69,6 +69,7 @@ namespace Jeto.Basel.WebApi
         public void ConfigureContainer(ContainerBuilder builder)
         {
             builder.RegisterModule(new RepositoryModule());
+            builder.RegisterModule(new ServiceModule());
             
             builder.RegisterType<TenantProvider>()
                 .As<ITenantProvider>()
