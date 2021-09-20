@@ -5,22 +5,28 @@ using System.Security.Cryptography;
 using Jeto.Basel.Common.Constants;
 using Jeto.Basel.Common.Options;
 using Jeto.Basel.Domain.Contracts;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
 namespace Jeto.Basel.Common.Helpers
 {
-    public abstract class JwtManager
+    public interface IJwtManager
+    {
+        AccessTokenContract GenerateToken(IJwtContract member);
+    }
+
+    public class JwtManager : IJwtManager
     {
         private readonly AuthOptions _authOptions;
 
-        protected JwtManager(AuthOptions authOptions)
+        public JwtManager(IOptions<AuthOptions> authOptions)
         {
-            _authOptions = authOptions;
+            _authOptions = authOptions.Value;
         }
 
         private static readonly byte[] SymmetricKey = Convert.FromBase64String(AppConstants.SymmetricKey);
 
-        public static TokenValidationParameters ValidationParameters => new TokenValidationParameters
+        public static TokenValidationParameters ValidationParameters => new()
         {
             RequireExpirationTime = true,
             ValidateIssuer = false,

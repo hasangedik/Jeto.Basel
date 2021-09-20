@@ -1,11 +1,12 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using FluentValidation;
 using Jeto.Basel.Common.Constants;
 using Jeto.Basel.Common.Resources;
-using Jeto.Basel.Domain.Contracts;
+using Jeto.Basel.Domain.Messages.Responses;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
@@ -37,34 +38,43 @@ namespace Jeto.Basel.WebApi.Middlewares
         /// <param name="httpContext">Http Context</param>
         public async Task InvokeAsync(HttpContext httpContext)
         {
-            var response = new BaseContract();
+            var response = new BaseResponse
+            {
+                HasError = true
+            };
             try
             {
                 await _next(httpContext);
             }
             catch (ValidationException exception)
             {
-                _logger.LogError(exception, "{Message}", exception.Message);
-                response.HasError = true;
-                response.ErrorCode = ((int)HttpStatusCode.BadRequest).ToString();
-                response.ErrorMessages = exception.Errors.Select(p => p.ErrorMessage).ToList();
-                response.Message = Literals.ValidationError_Message;
+                var errorMessages = !exception.Errors.Any() ? new List<string> { exception.Message } : exception.Errors.Select(p => p.ErrorMessage).ToList();
                 
+                var validationResponse = response with
+                {
+                    ErrorCode = ((int)HttpStatusCode.BadRequest).ToString(),
+                    ErrorMessages = errorMessages,
+                    Message = Literals.ValidationError
+                };
+
                 httpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
                 httpContext.Response.ContentType = AppConstants.JsonContentType;
-                await httpContext.Response.WriteAsync(JsonConvert.SerializeObject(response));
+                await httpContext.Response.WriteAsync(JsonConvert.SerializeObject(validationResponse));
             }
             catch (Exception exception)
             {
                 _logger.LogError(exception, "{Message}", exception.Message);
-                response.HasError = true;
-                response.ErrorCode = ((int)HttpStatusCode.InternalServerError).ToString();
-                response.ErrorMessages.Add(Literals.ServerError_Message);
-                response.Message = Literals.ServerError_Message;
+
+                var exceptionResponse = response with
+                {
+                    ErrorCode = ((int)HttpStatusCode.InternalServerError).ToString(),
+                    ErrorMessages = new List<string> { Literals.ServerError },
+                    Message = Literals.ServerError
+                };
 
                 httpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
                 httpContext.Response.ContentType = AppConstants.JsonContentType;
-                await httpContext.Response.WriteAsync(JsonConvert.SerializeObject(response));
+                await httpContext.Response.WriteAsync(JsonConvert.SerializeObject(exceptionResponse));
             }
         }
     }

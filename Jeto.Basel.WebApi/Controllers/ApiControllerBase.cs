@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using Jeto.Basel.Domain.Messages.Responses;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -31,6 +32,21 @@ namespace Jeto.Basel.WebApi.Controllers
         protected async Task<TResult> CommandAsync<TResult>(IRequest<TResult> command)
         {
             return await _mediator.Send(command);
+        }
+        
+        [NonAction]
+        protected new OkObjectResult Ok() => Ok(null);
+
+        [NonAction]
+        public override OkObjectResult Ok(object value)
+        {
+            var response = new BaseResponse
+            {
+                Message = "OK",
+                Result = value,
+            };
+
+            return base.Ok(response);
         }
     }
 }

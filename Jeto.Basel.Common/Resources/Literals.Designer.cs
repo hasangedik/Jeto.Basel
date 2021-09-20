@@ -45,15 +45,27 @@ namespace Jeto.Basel.Common.Resources {
             }
         }
         
-        public static string ServerError_Message {
+        public static string ServerError {
             get {
-                return ResourceManager.GetString("ServerError_Message", resourceCulture);
+                return ResourceManager.GetString("ServerError", resourceCulture);
             }
         }
         
-        public static string ValidationError_Message {
+        public static string ValidationError {
             get {
-                return ResourceManager.GetString("ValidationError_Message", resourceCulture);
+                return ResourceManager.GetString("ValidationError", resourceCulture);
+            }
+        }
+        
+        public static string WrongCredentials {
+            get {
+                return ResourceManager.GetString("WrongCredentials", resourceCulture);
+            }
+        }
+        
+        public static string UserAlreadyRegistered {
+            get {
+                return ResourceManager.GetString("UserAlreadyRegistered", resourceCulture);
             }
         }
     }

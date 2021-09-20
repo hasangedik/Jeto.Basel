@@ -1,3 +1,5 @@
+using Jeto.Basel.Common.Constants;
+using Jeto.Basel.Common.Options;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -16,7 +18,7 @@ namespace Jeto.Basel.Common.StartupConfigurations
         /// <returns></returns>
         public static IServiceCollection AddOptionConfiguration(this IServiceCollection services, IConfiguration configuration)
         {
-            //services.Configure<RabbitMqOption>(configuration.GetSection(AppConstants.RabbitMqSettingsOptionName));
+            services.Configure<AuthOptions>(configuration.GetSection(AppConstants.AuthOptionName));
             return services;
         }
     }

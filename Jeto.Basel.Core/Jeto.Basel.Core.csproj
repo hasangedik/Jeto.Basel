@@ -5,6 +5,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="BCrypt.Net-Next" Version="4.0.2" />
       <PackageReference Include="FluentValidation" Version="10.3.3" />
       <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
       <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="2.2.0" />
@@ -18,7 +19,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Features\QueryHandlers" />
+      <Folder Include="Handlers\QueryHandlers" />
     </ItemGroup>
 
 </Project>

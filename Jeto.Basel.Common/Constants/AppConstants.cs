@@ -7,5 +7,6 @@ namespace Jeto.Basel.Common.Constants
         public const string Json = "json";
         public const string JsonContentType = "application/json";
         public const string Jwt = "JWT";
+        public const string AuthOptionName = "Auth";
     }
 }

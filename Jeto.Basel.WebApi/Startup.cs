@@ -1,10 +1,12 @@
 using Autofac;
 using FluentValidation;
+using Jeto.Basel.Common.Helpers;
 using Jeto.Basel.Common.Providers;
 using Jeto.Basel.Common.StartupConfigurations;
 using Jeto.Basel.Container;
-using Jeto.Basel.Core.Features.CommandHandlers.User;
+using Jeto.Basel.Core.Handlers.CommandHandlers.User;
 using Jeto.Basel.Core.Validators;
+using Jeto.Basel.Core.Validators.User;
 using Jeto.Basel.WebApi.Middlewares;
 using Jeto.Basel.WebApi.PipelineBehaviours;
 using Jeto.Basel.WebApi.Configurations.Startup;
@@ -32,7 +34,7 @@ namespace Jeto.Basel.WebApi
         {
             services.AddOptionConfiguration(Configuration);
             services.AddDatabaseContext(Configuration);
-            services.AddJwtAuthorizationConfiguration(Configuration);
+            services.AddJwtAuthorizationConfiguration();
             services.AddControllers();
             services.AddValidatorsFromAssembly(typeof(CreateUserCommandValidator).Assembly);
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
@@ -55,6 +57,7 @@ namespace Jeto.Basel.WebApi
             app.UseSecuritySettings(); 
             app.UseRouting();
             app.UseAuthorization();
+            app.UseHealthCheckConfiguration();
             app.UseMiddleware<ExceptionHandlerMiddleware>();
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
@@ -71,8 +74,12 @@ namespace Jeto.Basel.WebApi
                 .As<ITenantProvider>()
                 .WithParameter("isTenantIdFilterEnabled", true)
                 .SingleInstance();
+
+            builder.RegisterType<JwtManager>()
+                .As<IJwtManager>()
+                .SingleInstance();
             
-            builder.RegisterMediatR(typeof(CreateUserHandler).Assembly);
+            builder.RegisterMediatR(typeof(CreateUserCommandHandler).Assembly);
         }
     }
 }

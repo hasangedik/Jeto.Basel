@@ -1,6 +1,5 @@
 using Jeto.Basel.Common.Helpers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Jeto.Basel.Common.StartupConfigurations
@@ -16,7 +15,7 @@ namespace Jeto.Basel.Common.StartupConfigurations
         /// <param name="services">ServiceCollection</param>
         /// <param name="configuration">Configuration</param>
         /// <returns></returns>
-        public static IServiceCollection AddJwtAuthorizationConfiguration(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddJwtAuthorizationConfiguration(this IServiceCollection services)
         {
             services.AddAuthentication(x =>
             {

@@ -1,5 +1,5 @@
 using System.Threading.Tasks;
-using Jeto.Basel.Domain.Commands.User;
+using Jeto.Basel.Domain.Messages.Requests.Commands.User;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -33,7 +33,7 @@ namespace Jeto.Basel.WebApi.Controllers
         [HttpPost]
         [ProducesResponseType(200)]
         [ProducesResponseType(400)]
-        public async Task<ActionResult> CreateCustomerAsync([FromBody] CreateUserCommand command)
+        public async Task<ActionResult> CreateCustomerAsync([FromBody] CreateUserCommandRequest command)
         {
             return Ok(await CommandAsync(command));
         }

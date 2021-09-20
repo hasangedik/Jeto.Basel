@@ -10,8 +10,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Features" />
-      <Folder Include="Queries\User" />
+      <Folder Include="Messages\Responses\Queries" />
     </ItemGroup>
 
 </Project>
