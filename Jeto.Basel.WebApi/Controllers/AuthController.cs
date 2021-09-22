@@ -17,7 +17,9 @@ namespace Jeto.Basel.WebApi.Controllers
         [ProducesResponseType(400)]
         public async Task<ActionResult> LoginAsync([FromBody] LoginCommandRequest command)
         {
-            return Ok(await CommandAsync(command));
+            var response = await CommandAsync(command);
+            
+            return Ok(response);
         }
     }
 }

@@ -7,7 +7,7 @@ using Jeto.Basel.Domain.Messages.Requests.Commands.User;
 using Jeto.Basel.Domain.Messages.Responses.Commands.User;
 using MediatR;
 
-namespace Jeto.Basel.Core.Handlers.CommandHandlers.User
+namespace Jeto.Basel.Application.Handlers.CommandHandlers.User
 {
     public class CreateUserCommandHandler : IRequestHandler<CreateUserCommandRequest, CreateUserCommandResponse>
     {

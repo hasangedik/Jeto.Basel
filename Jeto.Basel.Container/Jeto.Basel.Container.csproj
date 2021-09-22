@@ -9,7 +9,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Jeto.Basel.Core\Jeto.Basel.Core.csproj" />
+      <ProjectReference Include="..\Jeto.Basel.Application\Jeto.Basel.Application.csproj" />
       <ProjectReference Include="..\Jeto.Basel.Data\Jeto.Basel.Data.csproj" />
     </ItemGroup>
 

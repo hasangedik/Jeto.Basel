@@ -1,7 +1,7 @@
 using FluentValidation;
 using Jeto.Basel.Domain.Messages.Requests.Commands.User;
 
-namespace Jeto.Basel.Core.Validators.User
+namespace Jeto.Basel.Application.Validators.User
 {
     public class CreateUserCommandValidator : AbstractValidator<CreateUserCommandRequest>
     {

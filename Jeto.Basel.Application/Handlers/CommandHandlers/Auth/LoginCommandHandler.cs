@@ -9,7 +9,7 @@ using Jeto.Basel.Domain.Messages.Requests.Commands.Auth;
 using Jeto.Basel.Domain.Messages.Responses.Commands.Auth;
 using MediatR;
 
-namespace Jeto.Basel.Core.Handlers.CommandHandlers.Auth
+namespace Jeto.Basel.Application.Handlers.CommandHandlers.Auth
 {
     public class LoginCommandHandler : IRequestHandler<LoginCommandRequest, LoginCommandResponse>
     {

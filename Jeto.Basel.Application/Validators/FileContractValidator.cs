@@ -5,7 +5,7 @@ using Jeto.Basel.Common.Validations;
 using Jeto.Basel.Domain.Contracts;
 using Microsoft.AspNetCore.Http;
 
-namespace Jeto.Basel.Core.Validators
+namespace Jeto.Basel.Application.Validators
 {
     public class FileContractValidator : AbstractValidator<FileContract>
     {

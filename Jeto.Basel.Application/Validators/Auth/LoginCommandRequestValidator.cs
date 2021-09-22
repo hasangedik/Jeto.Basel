@@ -1,7 +1,7 @@
 using FluentValidation;
 using Jeto.Basel.Domain.Messages.Requests.Commands.Auth;
 
-namespace Jeto.Basel.Core.Validators.Auth
+namespace Jeto.Basel.Application.Validators.Auth
 {
     public class LoginCommandRequestValidator : AbstractValidator<LoginCommandRequest>
     {

@@ -2,14 +2,13 @@
 using System.Threading.Tasks;
 using Castle.Core.Internal;
 using Jeto.Basel.Common.Options;
-using Jeto.Basel.Core.Service.Abstract;
 using Jeto.Basel.Domain.Contracts;
 using Microsoft.Extensions.Options;
 using MimeKit;
 using MimeKit.Text;
 using SmtpClient = MailKit.Net.Smtp.SmtpClient;
 
-namespace Jeto.Basel.Core.Service.Concrete
+namespace Jeto.Basel.Application.Features.Email
 {
     public class EmailService : IEmailService
     {

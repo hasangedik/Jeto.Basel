@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Jeto.Basel.Domain.Contracts;
 
-namespace Jeto.Basel.Core.Service.Abstract
+namespace Jeto.Basel.Application.Features.Email
 {
     public interface IEmailService
     {

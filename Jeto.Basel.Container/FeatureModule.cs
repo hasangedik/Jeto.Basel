@@ -1,11 +1,11 @@
 ﻿using System.Reflection;
 using Autofac;
-using Jeto.Basel.Core.Service.Concrete;
+using Jeto.Basel.Application.Features.Email;
 using Module = Autofac.Module;
 
 namespace Jeto.Basel.Container
 {
-    public class ServiceModule : Module
+    public class FeatureModule : Module
     {
         protected override void Load(ContainerBuilder builder)
         {

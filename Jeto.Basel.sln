@@ -6,7 +6,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Presentation", "1.Present
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Business", "2.Business", "{8D67D7CA-FB38-44D6-9B48-599652B0FAA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jeto.Basel.Core", "Jeto.Basel.Core\Jeto.Basel.Core.csproj", "{B474A4C0-874B-4605-B623-ED18EB2F21F0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jeto.Basel.Application", "Jeto.Basel.Application\Jeto.Basel.Application.csproj", "{B474A4C0-874B-4605-B623-ED18EB2F21F0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jeto.Basel.Domain", "Jeto.Basel.Domain\Jeto.Basel.Domain.csproj", "{BC5D1E61-2235-4888-825D-E2E25A731D34}"
 EndProject

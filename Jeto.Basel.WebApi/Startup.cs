@@ -4,9 +4,8 @@ using Jeto.Basel.Common.Helpers;
 using Jeto.Basel.Common.Providers;
 using Jeto.Basel.Common.StartupConfigurations;
 using Jeto.Basel.Container;
-using Jeto.Basel.Core.Handlers.CommandHandlers.User;
-using Jeto.Basel.Core.Validators;
-using Jeto.Basel.Core.Validators.User;
+using Jeto.Basel.Application.Handlers.CommandHandlers.User;
+using Jeto.Basel.Application.Validators.User;
 using Jeto.Basel.WebApi.Middlewares;
 using Jeto.Basel.WebApi.PipelineBehaviours;
 using Jeto.Basel.WebApi.Configurations.Startup;
@@ -69,7 +68,7 @@ namespace Jeto.Basel.WebApi
         public void ConfigureContainer(ContainerBuilder builder)
         {
             builder.RegisterModule(new RepositoryModule());
-            builder.RegisterModule(new ServiceModule());
+            builder.RegisterModule(new FeatureModule());
             
             builder.RegisterType<TenantProvider>()
                 .As<ITenantProvider>()
